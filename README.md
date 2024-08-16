@@ -6,13 +6,13 @@ Este repositório contém atividades e exemplos de código para a disciplina TI2
 
 Contém a primeira atividade.
 
-### PASTA - `PostgreSQL`
+### PASTA - `ATIVIDADE2_TI2`
 
 Contém a segunda atividade, que envolve a manipulação de livros em um banco de dados PostgreSQL.
 
-## Configuração do Banco de Dados
+### Configuração do Banco de Dados
 
-### Criar a Tabela
+#### Criar a Tabela
 
 Para testar a aplicação, você precisa criar a tabela `books` no seu banco de dados PostgreSQL. Execute o seguinte comando SQL:
 
