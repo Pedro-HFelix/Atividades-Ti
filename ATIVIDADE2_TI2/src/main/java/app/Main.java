@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
+    private final static Scanner sc = new Scanner(System.in);
 
     private static void listBooks(BookDAO bookDAO) {
         try {
@@ -24,16 +24,16 @@ public class Main {
     private static void insertBook(BookDAO bookDAO) {
         try {
             System.out.print("Título: ");
-            String title = scanner.nextLine();
+            String title = sc.nextLine();
 
             System.out.print("Autor: ");
-            String author = scanner.nextLine();
+            String author = sc.nextLine();
 
             System.out.print("Preço: ");
-            double price = scanner.nextDouble();
+            double price = sc.nextDouble();
 
             System.out.print("Quantidade: ");
-            int quantity = scanner.nextInt();
+            int quantity = sc.nextInt();
 
             Book book = new Book(title, author, price, quantity);
             boolean isInserted = bookDAO.insertBook(book);
@@ -51,7 +51,7 @@ public class Main {
     private static void deleteBook(BookDAO bookDAO) {
         try {
             System.out.print("ID do livro a ser excluído: ");
-            int id = scanner.nextInt();
+            int id = sc.nextInt();
             boolean bookIsDeleted = bookDAO.deleteBook(id);
 
             if (bookIsDeleted) {
@@ -67,20 +67,20 @@ public class Main {
     private static void updateBook(BookDAO bookDAO) {
         try {
             System.out.print("ID do livro a ser atualizado: ");
-            int id = scanner.nextInt();
-            scanner.nextLine();
+            int id = sc.nextInt();
+            sc.nextLine();
 
             System.out.print("Novo Título: ");
-            String title = scanner.nextLine();
+            String title = sc.nextLine();
 
             System.out.print("Novo Autor: ");
-            String author = scanner.nextLine();
+            String author = sc.nextLine();
 
             System.out.print("Novo Preço: ");
-            double price = scanner.nextDouble();
+            double price = sc.nextDouble();
 
             System.out.print("Nova Quantidade: ");
-            int quantity = scanner.nextInt();
+            int quantity = sc.nextInt();
 
             Book book = new Book(id, title, author, price, quantity);
             boolean isUpdated = bookDAO.updateBook(book);
@@ -108,8 +108,8 @@ public class Main {
             System.out.println("5 - Sair");
 
             System.out.print("Escolha uma das opções: ");
-            option = scanner.nextInt();
-            scanner.nextLine();
+            option = sc.nextInt();
+            sc.nextLine();
 
             switch (option) {
                 case 1:
@@ -132,7 +132,7 @@ public class Main {
             }
         } while (option != 5);
 
-        scanner.close();
+        sc.close();
         System.out.println("Obrigado por usar o programa! Volte sempre que necessário");
     }
 }
