@@ -6,47 +6,6 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        BookDAO bookDAO = new BookDAO();
-        int option;
-
-        do {
-            System.out.println("\n--- Menu ---");
-            System.out.println("1 - Listar Livros");
-            System.out.println("2 - Inserir Livro");
-            System.out.println("3 - Excluir Livro");
-            System.out.println("4 - Atualizar Livro");
-            System.out.println("5 - Sair");
-
-            System.out.print("Escolha uma opção: ");
-            option = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (option) {
-                case 1:
-                    listBooks(bookDAO);
-                    break;
-                case 2:
-                    insertBook(bookDAO);
-                    break;
-                case 3:
-                    deleteBook(bookDAO);
-                    break;
-                case 4:
-                    updateBook(bookDAO);
-                    break;
-                case 5:
-                    System.out.println("Saindo...");
-                    break;
-                default:
-                    System.out.println("Opção inválida. Tente novamente.");
-            }
-        } while (option != 5);
-
-        scanner.close();
-        System.out.println("Obrigado por usar o programa!");
-    }
-
     private static void listBooks(BookDAO bookDAO) {
         try {
             List<Book> books = bookDAO.listBooks();
@@ -134,5 +93,46 @@ public class Main {
         } catch (Exception e) {
             System.err.println("Erro ao atualizar livro: " + e.getMessage());
         }
+    }
+
+    public static void main(String[] args) {
+        BookDAO bookDAO = new BookDAO();
+        int option;
+
+        do {
+            System.out.println("\n--- Menu ---\n");
+            System.out.println("1 - Listar Livros");
+            System.out.println("2 - Inserir Livro");
+            System.out.println("3 - Excluir Livro");
+            System.out.println("4 - Atualizar Livro");
+            System.out.println("5 - Sair");
+
+            System.out.print("Escolha uma das opções: ");
+            option = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (option) {
+                case 1:
+                    listBooks(bookDAO);
+                    break;
+                case 2:
+                    insertBook(bookDAO);
+                    break;
+                case 3:
+                    deleteBook(bookDAO);
+                    break;
+                case 4:
+                    updateBook(bookDAO);
+                    break;
+                case 5:
+                    System.out.println("Saindo do programa.....");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        } while (option != 5);
+
+        scanner.close();
+        System.out.println("Obrigado por usar o programa! Volte sempre que necessário");
     }
 }
