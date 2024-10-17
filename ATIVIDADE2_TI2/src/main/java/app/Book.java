@@ -14,7 +14,7 @@ public class Book {
         this.price = price;
         this.quantity = quantity;
     }
-    
+
     public Book(String title, String author, double price, int quantity) {
         this.title = title;
         this.author = author;
@@ -61,7 +61,7 @@ public class Book {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
     @Override
     public String toString() {
         return "Book [" +
@@ -73,4 +73,3 @@ public class Book {
                 ']';
     }
 }
-
